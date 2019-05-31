@@ -11,7 +11,7 @@
 # git push in SDL
 7 ssh -X -p 2222 simon@solarsuna
 8 cd /dvol/deepmodels
-9. git commit & push
+9. git pull & commit & push
 
 # git pull in SDL2
 10. ssh -X -p 2223 jack@solarsuna
