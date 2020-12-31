@@ -37,13 +37,14 @@
 20. Make sure Google Drive G:\期貨歷史資料\00David\CN is ready
 21. git pull D:\deepmodels
 22. Open Anaconda Prompt
-23. cd D:\git\ModelTrain\China
-24. python ChinaTrainModel.py yyyyMM  (若是2020/3/31 訓練4月MODEL，就用 202004)
-25. git pull D:\deepmodels && git commit && push D:\deepmodels\pytorch\cn5
+23, conda activate pytorch
+24. cd D:\git\ModelTrain\China
+25. python ChinaTrainModel.py yyyyMM  (若是2020/3/31 訓練4月MODEL，就用 202004)
+26. git pull D:\deepmodels && git commit && push D:\deepmodels\pytorch\cn5
 
 # sync SDL & SDL2
-26. ssh SDL && git pull /dvol/deepmodels
-27. ssh SDL2 && git pull /dvol/deepmodels
+27. ssh SDL && git pull /dvol/deepmodels
+28. ssh SDL2 && git pull /dvol/deepmodels
 
 # check
 28. Use DavidTrade.exe to verify model if working.
