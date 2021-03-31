@@ -1,39 +1,39 @@
 # TRAIN 深度向下沖
-1. open http://solarsuna.com:3888/notebooks/JackStrategy/DavidTrainModel/TrainTWModel-PyTorch7.ipynb
+1. open http://192.168.100.103:3888/notebooks/JackStrategy/DavidTrainModel/TrainTWModel-PyTorch7.ipynb
 2. 更新第一行 TARGET_YM 至最新月份，如在2019/1/31 作的時候，就是設為 201902。
 3. Restart and Run All
 
 # TRAIN 深度一夜沖
-4. open http://solarsuna.com:3888/notebooks/JackStrategy/DavidTrainModel/TrainTWNModel-Night7.ipynb
+4. open http://192.168.100.103:3888/notebooks/JackStrategy/DavidTrainModel/TrainTWNModel-Night7.ipynb
 5. 更新第一行 TARGET_YM 至最新月份，如在2019/1/31 作的時候，就是設為 201902。
 6. Restart and Run All
 
 # git push in SDL
-7 ssh -X -p 2222 simon@solarsuna
+7 ssh simon@192.168.100.103
 8 cd /dvol/deepmodels
 9. git pull & commit & push
 
 # git pull in SDL2
-10. ssh -X -p 2223 jack@solarsuna
+10. ssh jack@192.168.100.151
 11 cd /dvol/deepmodels
 12. git pull
 
 # Convert 深度向下沖 ptmodel
-13. open http://solarsuna.com:3889/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel.ipynb
+13. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel.ipynb
 14. Restart and Run All
 
 # Convert 深度一夜沖 ptmodel
-13. open http://solarsuna.com:3889/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel-twn.ipynb
+13. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel-twn.ipynb
 14. Restart and Run All
 
 # Commit and Rclone to Google Cloud
-15. ssh -X -p 2223 jack@solarsuna
+15. ssh jack@192.168.100.151
 16. cd /dvol/deepmodels
 17. git commit & push
 18. sh ./rclone_ptmodel.sh
 
 # CHINA deepmodels
-19. RDP WinChina (solarsuna.com:33894)
+19. RDP WinChina (192.168.100.194)
 20. Make sure Google Drive G:\期貨歷史資料\00David\CN is ready
 21. git pull D:\deepmodels
 22. Open Anaconda Prompt
