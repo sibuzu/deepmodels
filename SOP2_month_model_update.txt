@@ -1,0 +1,41 @@
+# TRAIN 深度向下沖
+1. RDP WinChina (192.168.100.194)
+2. Make sure Google Drive is ready
+    G:\期貨歷史資料\00David\TW_STK_DAILY.zip
+    G:\期貨歷史資料\TW\TSE\day\StockDataN.zip
+    G:\期貨歷史資料\00David\CN 
+3. git pull D:\deepmodels
+4. Open Anaconda Prompt
+5. conda activate pytorch
+6. run update_tw.bat
+7. git pull D:\deepmodels && git commit && push D:\deepmodels
+8. convert pt models
+9. run update_china.bat
+10. git pull D:\deepmodels && git commit && push D:\deepmodels
+
+# conver pt models
+11. ssh jack@192.168.100.151 (SDL2)
+12 cd /dvol/deepmodels
+13. git pull
+
+# Convert 深度向下沖 ptmodel (pytorch version 1.0)
+14. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel.ipynb
+15. Restart and Run All
+
+# Convert 深度一夜沖 ptmodel
+16. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel-twn.ipynb
+17. Restart and Run All
+
+# Commit and Rclone to Google Cloud
+18. ssh jack@192.168.100.151 (SDL2)
+19. cd /dvol/deepmodels
+20. git commit & push
+21. sh ./rclone_ptmodel.sh
+
+# sync SDL & SDL2
+22. ssh SDL && git pull /dvol/deepmodels
+
+# check
+23. Use DavidTrade.exe to verify model if working.
+
+-- DONE.
