@@ -8,8 +8,8 @@
 4. Open Anaconda Prompt
 5. conda activate pytorch
 6. run update_tw.bat
-7. git pull D:\deepmodels && git commit && push D:\deepmodels
-8. convert pt models
+7. git commit && push D:\deepmodels
+8. convert pt models (step 11~17)
 9. run update_china.bat
 10. git pull D:\deepmodels && git commit && push D:\deepmodels
 
