@@ -33,9 +33,10 @@
 21. sh ./rclone_ptmodel.sh
 
 # sync SDL & SDL2
-22. ssh SDL && git pull /dvol/deepmodels
+22. ssh simon@192.168.100.103 (SDL2)
+23. git pull /dvol/deepmodels
 
 # check
-23. Use DavidTrade.exe to verify model if working.
+24. Use DavidTrade.exe to verify model if working.
 
 -- DONE.
