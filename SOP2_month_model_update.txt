@@ -33,7 +33,7 @@
 21. sh ./rclone_ptmodel.sh
 
 # sync SDL & SDL2
-22. ssh simon@192.168.100.103 (SDL2)
+22. ssh simon@192.168.100.103 (SDL)
 23. git pull /dvol/deepmodels
 
 # check
