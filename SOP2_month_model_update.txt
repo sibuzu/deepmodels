@@ -11,6 +11,7 @@
 7. git commit && push D:\deepmodels
 8. convert pt models (step 11~17)
 9. run update_china.bat
+9. run update_jp.bat
 10. git pull D:\deepmodels && git commit && push D:\deepmodels
 
 # conver pt models
