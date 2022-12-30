@@ -4,7 +4,7 @@
     G:\期貨歷史資料\00David\TW_STK_DAILY.zip
     G:\期貨歷史資料\00David\CN 
     G:\期貨歷史資料\TW\TSE\day\StockDataN.zip
-    G:\期貨歷史資料\TOKYO\JP_STK_DAILY.zip
+    G:\期貨歷史資料\00David\TOKYO\JP_STK_DAILY.zip
 3. git pull D:\deepmodels
 4. Open Anaconda Prompt
 5. conda activate pytorch
