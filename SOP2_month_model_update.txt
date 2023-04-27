@@ -24,9 +24,7 @@
 14. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel.ipynb
 15. Restart and Run All
 
-# Convert 深度一夜沖 ptmodel
-16. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel-twn.ipynb
-17. Restart and Run All
+### the source is in https://sibuzu@bitbucket.org/sibuzu/notebook3.git/
 
 # Commit and Rclone to Google Cloud
 18. ssh jack@192.168.100.151 (SDL2)
