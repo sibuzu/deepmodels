@@ -1,19 +1,42 @@
 # TRAIN 深度向下沖
-1. RDP WinChina (192.168.100.194)
-2. Make sure Google Drive is ready
-    G:\期貨歷史資料\00David\TW_STK_DAILY.zip
-    G:\期貨歷史資料\00David\CN 
-    G:\期貨歷史資料\TW\TSE\day\StockDataN.zip
-    G:\期貨歷史資料\00David\TOKYO\JP_STK_DAILY.zip
+1. RDP DellData (192.168.100.186)
+d:
+cd D:\git\YahooDownload\TWSE
+download_tw_stock.bat
+
+2. RDP WinChina (192.168.100.194)
+dir G:\期貨歷史資料\00David\TW_STK_DAILY.zip
+dir G:\期貨歷史資料\00David\CN\SH?_A_STK_DAILY.zip
+dir G:\期貨歷史資料\TW\TSE\day\StockDataN.zip
+dir G:\期貨歷史資料\00David\TOKYO\JP_STK_DAILY.zip
+
+# Make sure Google Drive is ready
+
 3. git pull D:\deepmodels
-4. Open Anaconda Prompt
+4. Open Anaconda Prompt x 3
 5. conda activate pytorch
 6. run update_tw.bat
-7. git commit && push D:\deepmodels
-8. convert pt models (step 11~17)
-9. run update_china.bat
-9. run update_jp.bat
-10. git pull D:\deepmodels && git commit && push D:\deepmodels
+7. run update_twn.bat
+8. run update_conf.bat
+9. git commit && push D:\deepmodels
+10. convert pt models (step 11~15)
+
+# conver pt models
+11. ssh jack@192.168.100.151 (SDL2)
+12 cd /dvol/deepmodels
+13. git pull
+
+# Convert 深度向下沖 ptmodel (pytorch version 1.0)
+14. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel.ipynb
+    ### the source is in https://sibuzu@bitbucket.org/sibuzu/notebook3.git/
+15. Restart and Run All
+
+# Commit and Rclone to Google Cloud
+16. ssh jack@192.168.100.151 (SDL2)
+17. cd /dvol/deepmodels
+18. git commit & push
+19. sh ./rclone_ptmodel.sh
+
 
 example:
 say today is 2023-04-30, it will create 202305 
@@ -24,28 +47,19 @@ python TWTrainConfidence.py (-s 202305) ==>
     use conf202004 ~ conf202304.feather to train confidence model
      -> create create ModelConf202305.mdl
 
-# conver pt models
-11. ssh jack@192.168.100.151 (SDL2)
-12 cd /dvol/deepmodels
-13. git pull
 
-# Convert 深度向下沖 ptmodel (pytorch version 1.0)
-14. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel.ipynb
-15. Restart and Run All
+------------------------------------------------
+20. Open Anaconda Prompt x 2
+21. run update_china.bat
+22. run update_jp.bat
+23. git pull D:\deepmodels && git commit && push D:\deepmodels
 
-### the source is in https://sibuzu@bitbucket.org/sibuzu/notebook3.git/
-
-# Commit and Rclone to Google Cloud
-18. ssh jack@192.168.100.151 (SDL2)
-19. cd /dvol/deepmodels
-20. git commit & push
-21. sh ./rclone_ptmodel.sh
 
 # sync SDL & SDL2
-22. ssh simon@192.168.100.103 (SDL)
-23. git pull /dvol/deepmodels
+24. ssh simon@192.168.100.103 (SDL)
+25. git pull /dvol/deepmodels
 
 # check
-24. Use DavidTrade.exe to verify model if working.
+26. Use DavidTrade.exe to verify model if working.
 
 -- DONE.

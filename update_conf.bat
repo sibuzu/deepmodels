@@ -1,3 +1,3 @@
 cd D:\git\ModelTrain\TW
-python TWTrainModel.py
+python TWTrainConfidence.py
 cd D:\deepmodels
