@@ -15,6 +15,15 @@
 9. run update_jp.bat
 10. git pull D:\deepmodels && git commit && push D:\deepmodels
 
+example:
+say today is 2023-04-30, it will create 202305 
+python TWTrainModel.py (-s 202305) ==> create ModelT[A-Z]202305.mdl
+python TWTrainConfidence.py (-s 202305) ==>
+    use ModelT[A-Z]202304.mdl to predict 2023-04-01 ~ 2023-04-30 data 
+     -> create confidence/conf202304.feather
+    use conf202004 ~ conf202304.feather to train confidence model
+     -> create create ModelConf202305.mdl
+
 # conver pt models
 11. ssh jack@192.168.100.151 (SDL2)
 12 cd /dvol/deepmodels
