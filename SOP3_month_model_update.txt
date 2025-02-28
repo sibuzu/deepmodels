@@ -26,15 +26,16 @@ dir G:\期貨歷史資料\00David\TOKYO\JP_STK_DAILY.zip
 13. git pull
 
 # Convert 深度向下沖 ptmodel (pytorch version 1.0)
-14. open http://192.168.100.151:3888/notebooks/JackStrategy/pytorch/DavidTrade/ConvertToPtModel.ipynb
-    ### the source is in https://sibuzu@bitbucket.org/sibuzu/notebook3.git/
-15. Restart and Run All
+14. wsl
+15. conda activate pytorch101
+16. cd /mnt/d/git/ModelTrain/TW
+17. python MakeLocalModel.py
 
 # Commit and Rclone to Google Cloud
-16. ssh jack@192.168.100.151 (SDL2)
-17. cd /dvol/deepmodels
-18. git commit & push
-19. sh ./rclone_ptmodel.sh
+18. ssh jack@192.168.100.151 (SDL2)
+19. cd /dvol/deepmodels
+20. git commit & push
+21. sh ./rclone_ptmodel.sh
 
 # sync SDL & SDL2
 24. ssh simon@192.168.100.103 (SDL)
