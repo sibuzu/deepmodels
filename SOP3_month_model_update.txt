@@ -28,16 +28,15 @@ dir G:\期貨歷史資料\00David\TOKYO\JP_STK_DAILY.zip
 15. exit
 
 # Commit and Rclone to Google Cloud
-18. ssh jack@192.168.100.151 (SDL2)
-19. cd /dvol/deepmodels
-20. git commit & push
-21. sh ./rclone_ptmodel.sh
+16. cd D:\deepmodels
+17. git add . && git commit & push
+18. copy_gdrive.bat
 
-# sync SDL & SDL2
-24. ssh simon@192.168.100.103 (SDL)
-25. git pull /dvol/deepmodels
+# sync SDL
+19. ssh simon@192.168.100.103 (SDL)
+20. git pull /dvol/deepmodels
 
 # check
-26. Use DavidTrade.exe to verify model if working.
+22. Use DavidTrade.exe to verify model if working.
 
 -- DONE.
