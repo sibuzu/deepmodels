@@ -1,6 +1,6 @@
 :: Set your old and new date strings here
-set "OLD_DATE=202502"
-set "NEW_DATE=202503"
+set "OLD_DATE=202512"
+set "NEW_DATE=202601"
 
 @echo off
 echo Are you sure to ROLLBACK %NEW_DATE% from %OLD_DATE%¡H(Y/N)
