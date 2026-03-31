@@ -13,3 +13,9 @@ pytorch/us/
 pytorch/us2/
 pytorch/usr/
 
+__pycache__/
+Untitled*
+*.ipynb
+*.feather
+
+
