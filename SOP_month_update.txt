@@ -1,0 +1,74 @@
+每月底模型更新 SOP（TW／TWN）
+
+一、執行前
+
+確認當月交易已結束，且 Google Drive 的歷史資料已更新完整。
+只處理 TW、TWN，跳過 JP、CN；不需要開啟 China。
+
+例如：2026 年 10 月底，用 10 月資料訓練 202611 模型。
+若延到 11 月才執行，仍指定 202611，不要改成 202612。
+
+二、月底執行這個指令
+
+  cd ~/git/ModelTrain
+  ./TW/monthly_update.sh 202611
+
+之後每月將 202611 換成要產生的模型月份。
+
+程式會依序完成：
+1. 下載／更新 TW_STK_DAILY.zip、StockDataN.zip，檢查當月資料。
+2. 同時訓練 TW A～G、TWN A～G，共 14 個模型，各 50 epochs。
+3. 將這 14 個模型轉成 PT。
+4. 產生當月 TW、TWN 的預測 parquet。
+5. 將新月份 MDL、PT 與 predicts/ 的所有變更 commit，訊息為 202611，
+   再 push 到 origin 的目前分支；執行前請確認分支正確。
+6. 將新 PT、當月 parquet 與預測紀錄 JSON 上傳 Google Drive。
+
+若提示資料可能缺少：
+  q 或直接 Enter：離開，等資料更新後再執行。
+  c：確認缺少的日期是休市日，或確定接受目前資料後，才繼續。
+檢查只排除週末；國定假日、颱風停市等需要自行確認。
+
+三、最後產生的檔案（以上述 2026 年 10 月底為例）
+
+以下路徑皆在 /dvol/deepmodels/，A～G 代表各有 7 個檔案：
+
+  pytorch/tw/ModelT[A～G]202611.mdl       TW 訓練模型
+  pytorch/twn-30/ModelN[A～G]202611.mdl   TWN 訓練模型
+  ptmodel/tw/ModelT[A～G]202611.pt        TW 本機使用模型
+  ptmodel/twn/ModelN[A～G]202611.pt       TWN 本機使用模型
+  predicts/tw/2026/pred_tw_2026_10.parquet
+  predicts/twn/2026/pred_twn_2026_10.parquet
+
+兩個 parquet 各附一個 .parquet.json，記錄使用的模型及資料來源。
+注意：10 月 parquet 使用既有的 202610 模型；新產生的 202611 模型供 11 月使用。
+
+Google Drive 上傳位置（ts2013:期貨歷史資料/ 下）：
+  00David/MODELS/tw/、twn/                    新 PT
+  00David/TW_STK_TICK/Predicts/tw/2026/、twn/2026/  parquet 與 JSON
+
+四、完成後自己處理
+
+1. 執行結果檢查（月份與月更指令相同）：
+     cd ~/git/ModelTrain
+     ./TW/check_monthly_update.sh 202611
+   會檢查最新一次月更、本機檔案、Git commit／遠端 push 與 Google Drive
+   檔案大小及 MD5；全部通過才繼續下一步。檢查失敗會回傳非零結束碼。
+2. 自行重新啟動 deepdavid Docker。
+3. 用 DavidTrade 連線 deepdavid.solarsuna.com，確認模型載入及預測正常。
+4. 本機使用 PT 的程式，更新／載入新月份 PT。
+
+若執行中斷，保留畫面顯示的執行目錄，使用續跑指令：
+  ./TW/monthly_update.sh --resume /dvol/modeltrain-work/monthly/<該次執行目錄>
+
+若要整輪重新訓練同月份，而該月 MDL／PT 已存在，必須明確加上 --force：
+  ./TW/monthly_update.sh 202611 --force
+
+不加 --force 會停止；加上後直接覆蓋，不再詢問、不備份舊模型。
+重訓仍從前一月份模型開始，各 50 epochs，之後重新轉 PT、預測、commit、push 及上傳。
+資料缺少的確認仍會詢問，--force 不會略過資料檢查。
+
+日誌在該次目錄的 commands.log、run.json；結果檢查報告為 check-result.json。
+詳細設定、移轉紀錄與回復方式請看 README.md。
+
+目前月更腳本僅完成模擬測試，尚未執行正式月更；請於月底手動執行。
