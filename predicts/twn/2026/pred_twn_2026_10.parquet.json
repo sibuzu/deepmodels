@@ -1,0 +1,21 @@
+{
+  "rows": 39325,
+  "sha256": "5e0ef5b79e847f5123c5f799b044e45ac616b4e36861e6033a8c79c313f47364",
+  "signature": {
+    "date_col": "date",
+    "input_sha256": "1b7addaf9b45e9b1f2b610fd22b61be8665fbe5bafc988b2a59148a9931355e1",
+    "models": {
+      "A": "6ebcab7330b3fd235719335f79949449a0cde574477a0d19f03854bbf7efb3f0",
+      "B": "ce3d8de757a7998d33653a6ff6ad93b69ad6aa049704ff0a03e53ef591c39d99",
+      "C": "acc0e36378c700f815ab6c216bb682474a6ed92d32826e015b84e42824d5df86",
+      "D": "8db85a0eb877ac2f5fe21140fa4332229761bafe7a64097ff55cf90f493a8473",
+      "E": "c6146c5d99fa4fb870c0055b3e86b191db42d083ca2256eb0d054495d866e1ac",
+      "F": "378541d8144c64b14f25a0490d15837d2d35a91ff0e063196c3b9530a5a0573e",
+      "G": "3f9c8d79be2de328728b4bf66bef816d3b9c014dce3e8ad9cbc3f8ce499fc3b4"
+    },
+    "month": 202610,
+    "numpy": "1.24.1",
+    "predictor_sha256": "720a5f74f3c2d5914134758cbf9e9e1c3defbeb638c1f0e3f426517be4d3c46a",
+    "torch": "2.0.1+cu118"
+  }
+}

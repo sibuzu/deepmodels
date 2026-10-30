@@ -1,0 +1,21 @@
+{
+  "rows": 39336,
+  "sha256": "5b6eca131d0fe6686ebd90fffe3baf9acca1ea41de0321622df1b801297d5fcc",
+  "signature": {
+    "date_col": "T1date",
+    "input_sha256": "fbaad4a6526efd4d6679740ca5dd6642df3d93b377a0ec75f175a6f1b44c8a2e",
+    "models": {
+      "A": "2c6e905a1a5b6e722e322f733cd237d1808bba4f6037351a0409c2461a05a4d5",
+      "B": "259798e1ee835deedaf9106d78f0f5a2f77c5cca60e57a179b827cf1cf1f7733",
+      "C": "54c07bb0166043e8c8f3124e66a08dc9097fdd5288a9e89303f855ed9a345d2a",
+      "D": "44a93c1471633561982f6409e2ac86351a04e1dd611aa0c586965ab667aa9566",
+      "E": "cfc3b1fdc7f22e704f3d5eac1c63a65b2c9ea1516fc8e9e0cb03dcf5b4027c9e",
+      "F": "c13225fed66c622c649ccceb7c67566033a4b759efcb5d361ff7eac2f999d9d0",
+      "G": "363262f5ea63b11500114ec5acce4da4523fc29fdba5e53b3c422213b71f7ba0"
+    },
+    "month": 202610,
+    "numpy": "1.24.1",
+    "predictor_sha256": "720a5f74f3c2d5914134758cbf9e9e1c3defbeb638c1f0e3f426517be4d3c46a",
+    "torch": "2.0.1+cu118"
+  }
+}
